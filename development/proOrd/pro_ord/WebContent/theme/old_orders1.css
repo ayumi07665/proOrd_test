@@ -1,0 +1,53 @@
+
+.header1 { 
+	BACKGROUND-COLOR : #FFFFFF;
+	font-family : '‚l‚r ƒSƒVƒbƒN' , sans-serif;
+	text-align : center;
+	height: 20px;
+	font-size:12px;
+}
+.header2 { 
+	BACKGROUND-COLOR : #FFFFFF;
+	font-family : '‚l‚r ƒSƒVƒbƒN' , sans-serif;
+	text-align : center;
+	height: 32px;
+}
+.details_table {
+	BACKGROUND-COLOR : #FFFFFF;
+	font-family : '‚l‚r –¾’©' , serif;
+	border-collapse:collapse;
+	border : double 3px #000000;
+	page-break-inside: avoid;
+	empty-cells: show;
+	table-layout: fixed;
+}
+.layout_table {
+	border: 0px none;
+	page-break-inside: avoid;
+	padding: 0px;
+	margin: 0px;
+}
+BODY {
+	BACKGROUND-COLOR : #FFFFFF;
+	COLOR : #000000;
+}
+BODY, TD {
+	font-size : 13px;
+}
+TD  {
+	border: 1px solid #000000;
+}
+H2  {
+	text-align:center;
+	letter-spacing: 0.5em;
+	font-weight: bold;
+	font-size : 23px;
+}
+.page_break {
+	page-break-after: always;
+}
+
+
+
+
+

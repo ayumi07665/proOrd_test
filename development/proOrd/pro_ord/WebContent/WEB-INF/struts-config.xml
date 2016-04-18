@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.0//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_0.dtd">
+<struts-config>
+
+  <!-- ========== Form Bean Definitions =================================== -->
+<form-beans>
+<form-bean name="LogonForm"
+		   type="com.jds.prodord.register.LogonForm"/>
+<form-bean name="DummyForm"
+		   type="com.jds.prodord.common.DummyForm"/>
+<form-bean name="GomainForm"
+		   type="com.jds.prodord.menu.GomainForm"/>
+<form-bean name="GomasterMenuForm"
+		   type="com.jds.prodord.menu.mastermenu.GomasterMenuForm"/>
+		  
+<form-bean name="teiansuuReferForm"
+		   type="com.jds.prodord.indicate.teiansuurefer.TeiansuuReferForm"/>
+<form-bean name="ikkatsuReferForm"
+		   type="com.jds.prodord.reference.ikkatsurefer.IkkatsuReferForm"/>
+<form-bean name="orderHistoryTopForm"
+		   type="com.jds.prodord.reference.orderhistory.OrderHistoryTopForm"/>
+<form-bean name="orderHistoryMidForm"
+		   type="com.jds.prodord.reference.orderhistory.OrderHistoryMidForm"/>
+<form-bean name="manualOrderForm"
+		   type="com.jds.prodord.indicate.manualorder.ManualOrderForm"/>
+<form-bean name="prsOrderForm"
+		   type="com.jds.prodord.order.prsorder.PrsOrderForm"/>
+<form-bean name="indicatePrintForm"
+		   type="com.jds.prodord.indicate.indicateprint.IndicatePrintForm"/>
+<form-bean name="manualOrderPasteForm"
+		   type="com.jds.prodord.indicate.manualorderpaste.ManualOrderPasteForm"/>
+
+
+<form-bean name="ketRakForm"
+		   type="com.jds.prodord.master.ketrak.KetRakForm"/>
+<form-bean name="StockDaysForm"
+		   type="com.jds.prodord.master.stockdays.StockDaysForm"/>
+<form-bean name="ArticleNumberForm"
+		   type="com.jds.prodord.master.articlenumber.ArticleNumberForm"/>
+<form-bean name="PurchaseOrderForm"
+		   type="com.jds.prodord.master.purchaseorder.PurchaseOrderForm"/>
+<form-bean name="SubMateStockForm"
+		   type="com.jds.prodord.master.submatestock.SubMateStockForm"/>
+<form-bean name="SubMateMasterForm"
+		   type="com.jds.prodord.master.submatemaster.SubMateMasterForm"/>
+<form-bean name="nyukoSuuAdjustForm"
+		   type="com.jds.prodord.master.nyukosuuadjust.NyukoSuuAdjustForm"/>
+<form-bean name="ketSziTblForm"
+		   type="com.jds.prodord.master.ketszitbl.KetSziTblForm"/>
+<form-bean name="fzkHinKsiForm"
+		   type="com.jds.prodord.master.fzkhinksi.FzkHinKsiForm"/>
+<form-bean name="fzkHinKsiPasteForm"
+		   type="com.jds.prodord.master.fzkhinksipaste.FzkHinKsiPasteForm">
+</form-bean>
+
+</form-beans>
+
+
+  <!-- ========== Global Forward Definitions ============================= -->
+<global-forwards type="org.apache.struts.action.ActionForward">
+	<forward name="offservice" path="/offservice.jsp" redirect="false"/>
+	<forward name="logoff" path="/close.jsp" redirect="false"/>
+	<forward name="Logoff" path="/Logoff.do" redirect="false"/>
+	<forward name="main" path="/main.jsp" redirect="false"/>
+	<forward name="Main" path="/Gomain.do" redirect="false"/>
+	<forward name="mastermenu" path="/GomasterMenu.do" redirect="false"/>
+	
+	<forward name="teiansuuRefer" path="/teiansuuRefer.do?fromMenuSgn=true" redirect="false"/>
+	<forward name="ikkatsuRefer" path="/ikkatsuRefer.do" redirect="false"/>
+	<forward name="printOrders" path="/printOrders.do" redirect="false"/>
+	<forward name="orderHistoryTop" path="/orderHistoryTop.do" redirect="false"/>
+	<forward name="orderHistoryMid" path="/orderHistoryMid.do" redirect="false"/>
+	<forward name="manualOrder" path="/manualOrder.do?fromMenuSgn=true" redirect="false"/>
+	<forward name="prsOrder" path="/prsOrder.do" redirect="false"/>
+	<forward name="indicatePrint" path="/indicatePrint.do" redirect="false"/>
+	<forward name="manualOrderPaste" path="/manualOrderPaste.do?fromMenuSgn=true" redirect="false"/>
+	
+	<forward name="ketRak" path="/ketRak.do" redirect="false"/>
+	<forward name="StockDays" path="/StockDays.do" redirect="false"/>
+	<forward name="ArticleNumber" path="/ArticleNumber.do" redirect="false"/>
+	<forward name="PurchaseOrder" path="/PurchaseOrder.do" redirect="false"/>
+	<forward name="SubMateStock" path="/SubMateStock.do" redirect="false"/>
+	<forward name="SubMateMaster" path="/SubMateMaster.do" redirect="false"/>
+	<forward name="nyukoSuuAdjust" path="/nyukoSuuAdjust.do" redirect="false"/>
+	<forward name="ketSziTbl" path="/ketSziTbl.do" redirect="false"/>
+	<forward name="fzkHinKsi" path="/fzkHinKsi.do"/>
+	<forward name="fzkHinKsiPaste" path="/fzkHinKsiPaste.do?fromMenuSgn=true" redirect="false">
+	</forward>
+
+</global-forwards>
+
+  <!-- ========== Action Mapping Definitions ============================= -->
+<action-mappings>
+	<action	path="/proOrdConnect"
+			type="com.jds.prodord.register.ConnectAction"
+			name="LogonForm"
+			scope="session"
+			validate="false">
+	<forward name="success"	path="/Logon.do"/>
+	<forward name="failure" path="/error.jsp"/>
+	<forward name="userErr" path="/error_user.jsp"/>
+	</action>
+	<action	path="/Logon"
+			type="com.jds.prodord.register.LogonAction"
+			name="LogonForm"
+			input="/index.jsp"
+			scope="session">
+	<forward name="success"	path="/main.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	<forward name="offservice" path="/offservice.jsp"/>
+	</action>
+	<action	path="/Logoff"
+			type="com.jds.prodord.register.LogoffAction"
+			name="DummyForm"
+			scope="request">
+	</action>
+	<action	path="/Gomain"
+			type="com.jds.prodord.menu.GomainAction"
+			name="GomainForm"
+			scope="request">
+	</action>
+	<action	path="/GomasterMenu"
+			type="com.jds.prodord.menu.mastermenu.GomasterMenuAction"
+			name="GomasterMenuForm"
+			scope="request">
+	<forward name="success"	path="/mastermenu.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<action path="/commonError" 
+			type="com.jds.prodord.common.errors.CommonErrorAction"
+			name="DummyForm"
+			scope="request">
+	<forward name="system" path="/error_system.jsp"/>
+	<forward name="system2" path="/error_system2.jsp"/>
+	<forward name="session" path="/error_session.jsp"/>
+	<forward name="user" path="/error_user.jsp"/>
+	</action>
+	<!--  *****  提案数照会指示  ***** -->
+	<action	path="/teiansuuRefer"
+			type="com.jds.prodord.indicate.teiansuurefer.TeiansuuReferAction"
+			name="teiansuuReferForm"
+			input="/teiansuuRefer_mid.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/teiansuuRefer.jsp"/>
+	<forward name="next" path="/next.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  提案数照会  ***** -->
+	<action	path="/ikkatsuRefer"
+			type="com.jds.prodord.reference.ikkatsurefer.IkkatsuReferAction"
+			name="ikkatsuReferForm"
+			input="/ikkatsuRefer_Rmid.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/ikkatsuRefer.jsp"/>
+	<forward name="next" path="/next.jsp"/>
+	<forward name="next_prs" path="/next_prsOrd.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	<forward name="failure1" path="/error_notexist.jsp"/>
+	</action>
+	<!--  *****  発注書  ***** -->
+	<action	path="/printOrders"
+			type="com.jds.prodord.print.printorders.PrintOrdersAction"
+			name="DummyForm"
+			validate="false"
+			scope="request">
+	<forward name="VAP" path="/printOrders01.jsp"/>
+	<forward name="CR" path="/printOrders02.jsp"/>
+	<forward name="K" path="/printOrders03.jsp"/>
+	<forward name="FX" path="/printOrders04.jsp"/>
+	<forward name="LAN" path="/printOrders05.jsp"/>
+	<forward name="failure" path="/error.jsp?reason=system2"/>
+	</action>
+	<!--  *****  発注履歴照会Top  ***** -->
+	<action	path="/orderHistoryTop"
+			type="com.jds.prodord.reference.orderhistory.OrderHistoryTopAction"
+			name="orderHistoryTopForm"
+			input="/orderHistory_top.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/orderHistory.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  発注履歴照会Mid  ***** -->
+	<action	path="/orderHistoryMid"
+			type="com.jds.prodord.reference.orderhistory.OrderHistoryMidAction"
+			name="orderHistoryMidForm"
+			input="/orderHistory_mid.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/orderHistory_mid.jsp"/>
+	<forward name="print" path="/orderHistoryMid.do"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  マニュアル発注指示  ***** -->
+	<action	path="/manualOrder"
+			type="com.jds.prodord.indicate.manualorder.ManualOrderAction"
+			name="manualOrderForm"
+			input="/manualOrder_mid.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/manualOrder.jsp"/>
+	<forward name="next" path="/next_prsOrd.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  プレス副資材発注  ***** -->
+	<action	path="/prsOrder"
+			type="com.jds.prodord.order.prsorder.PrsOrderAction"
+			name="prsOrderForm"
+			input="/prsOrder_Rmid.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/prsOrder.jsp"/>
+	<forward name="next" path="/next_prsOrd.jsp"/>
+	<forward name="next_manual" path="/next_manual.jsp"/>
+	<forward name="back" path="/next.jsp" />
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  マニュアル発注指示一括貼り付け  ***** -->
+	<action	path="/manualOrderPaste"
+			type="com.jds.prodord.indicate.manualorderpaste.ManualOrderPasteAction"
+			name="manualOrderPasteForm"
+			input="/manualOrderPaste.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/manualOrderPaste.jsp"/>
+	<forward name="next" path="/next_prsOrd.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  発注書出力指示  ***** -->
+	<action	path="/indicatePrint"
+			type="com.jds.prodord.indicate.indicateprint.IndicatePrintAction"
+			name="indicatePrintForm"
+			input="/indicatePrint.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/indicatePrint.jsp"/>
+	<forward name="issue" path="/indicatePrint.do"/>
+	<forward name="reissue" path="/indicatePrint.do"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  形態ランク別条件マスターメンテ  ***** -->
+	<action	path="/ketRak"
+			type="com.jds.prodord.master.ketrak.KetRakAction"
+			name="ketRakForm"
+			input="/ketRak.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/ketRak.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  在庫日数マスターメンテ  ***** -->
+	<action	path="/StockDays"
+			type="com.jds.prodord.master.stockdays.StockDaysAction"
+			name="StockDaysForm"
+			input="/stockdays.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/stockdays.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  品番マスターメンテ  ***** -->
+	<action	path="/ArticleNumber"
+			type="com.jds.prodord.master.articlenumber.ArticleNumberAction"
+			name="ArticleNumberForm"
+			input="/articleNumber.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/articleNumber.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  仕入発注先マスター照会  ***** -->
+	<action	path="/PurchaseOrder"
+			type="com.jds.prodord.master.purchaseorder.PurchaseOrderAction"
+			name="PurchaseOrderForm"
+			input="/purchaseorder.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/purchaseorder.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  副資材在庫メンテ  ***** -->
+	<action	path="/SubMateStock"
+			type="com.jds.prodord.master.submatestock.SubMateStockAction"
+			name="SubMateStockForm"
+			input="/submatestock.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/submatestock.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  副資材マスターメンテナンス  ***** -->
+	<action	path="/SubMateMaster"
+			type="com.jds.prodord.master.submatemaster.SubMateMasterAction"
+			name="SubMateMasterForm"
+			input="/submatemaster.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/submatemaster.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  入庫数調整  ***** -->
+	<action	path="/nyukoSuuAdjust"
+			type="com.jds.prodord.master.nyukosuuadjust.NyukoSuuAdjustAction"
+			name="nyukoSuuAdjustForm"
+			input="/nyukoSuuAdjust.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/nyukoSuuAdjust.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  形態別構成資材マスターメンテナンス  ***** -->
+	<action path="/ketSziTbl"
+			type="com.jds.prodord.master.ketszitbl.KetSziTblAction"
+			name="ketSziTblForm" 
+			input="/ketSziTbl.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/ketSziTbl.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+	<!--  *****  付属品構成マスターメンテナンス  ***** -->
+	<action path="/fzkHinKsi" 
+			type="com.jds.prodord.master.fzkhinksi.FzkHinKsiAction" 
+			name="fzkHinKsiForm" 
+			input="/fzkHinKsi.jsp" 
+			validate="true"
+			scope="session" >
+	<forward name="success" path="/fzkHinKsi.jsp"/>
+	<forward name="failure" path="/error.jsp" />
+	</action>
+	<!--  *****  付属品構成マスター一括貼り付け  ***** -->
+	<action	path="/fzkHinKsiPaste"
+			type="com.jds.prodord.master.fzkhinksipaste.FzkHinKsiPasteAction"
+			name="fzkHinKsiPasteForm"
+			input="/fzkHinKsiPaste.jsp"
+			validate="true"
+			scope="session">
+	<forward name="success" path="/fzkHinKsiPaste.jsp"/>
+	<forward name="next" path="/mastermenu.jsp"/>
+	<forward name="failure" path="/error.jsp"/>
+	</action>
+
+</action-mappings>
+
+</struts-config>  
