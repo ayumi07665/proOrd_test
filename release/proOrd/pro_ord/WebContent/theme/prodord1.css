@@ -1,0 +1,190 @@
+.center{
+	text-align:center;
+ 	margin-left:auto; 
+ 	margin-right:auto; 
+}
+
+/*　ボタン　--------------------------------------------------------------*/
+.button {
+	height : 30px;
+	cursor : pointer;
+}
+.button2 {
+	height : 25px;
+	border : 1px outset #8F7DB9;
+	cursor : pointer;
+}
+.button_right{
+	height:48px;
+	margin-bottom:20px;
+}
+/*　フォント　------------------------------------------------------------*/
+
+/*　白背景・黒文字　*/
+.details {
+	color : #000000;
+	background-color : #FFFFFF;
+}
+.details2 {
+	color : #8b8e8c;
+	background-color : #FFF8E9;
+}
+/*　通常のメッセージ　*/
+.info_msg {
+	color : #6b6e6c;
+	font-weight : bold;
+}
+/*　サービスメッセージ　*/
+.service_msg {
+	color : red;
+	font-weight : bold;
+}
+/*　行番号　*/
+.index {
+	color : #8b8e8c;
+	font-weight : bold;
+}
+/*　発注済・未出力　*/
+.haczmi {
+	color : #975386;
+	font-weight : bold;
+}
+/*　出力済　*/
+.syrzmi {
+	color : #F45963;
+	font-weight : bold;
+}
+
+/*　見出し用　------------------------------------------------------------*/
+
+/*　タイトル（濃い背景・白文字・中央寄せ）　*/
+.title_dark {
+	color : #FFFFFF;
+	background-color : #5c6395;
+	text-align : center;
+	vertical-align : middle;
+}
+/*　タイトル（薄めの背景・白文字・中央寄せ）　*/
+.title_light {
+	color : #FFFFFF;
+	background-color : #5ca2b4;
+	text-align : center;
+	vertical-align : middle;
+} 
+/*　タイトル（中間の色の背景・白文字・中央寄せ）　*/
+.title_neutral {
+	color : #FFFFFF;
+	background-color : #989797;
+	text-align : center;
+	vertical-align : middle;
+}
+
+
+/*　ボーダー　------------------------------------------------------------*/
+
+/*　ボーダー（濃）　*/
+.border_dark {
+	border:1px solid #5c6395;
+}
+/*　ボーダー（薄）　*/
+.border_light {
+	border:1px solid #5ca2b4;
+} 
+/*　ボーダー（中間）　*/
+.border_neutral {
+	border:1px solid #989797;
+}
+
+
+/*　テーブル　------------------------------------------------------------*/
+
+/*　明細行テーブル（背景）　*/
+.detailtable_back {
+	background-color : #6b6e6c;
+	border:1px solid #6b6e6c;
+	table-layout: fixed;
+	width : 100%;
+	height : 100%;
+}
+/*　明細行テーブル（手前）　*/
+.detailtable_front {
+	width : 100%;
+	height : 100%;
+}
+/*　テーブル（サイズ固定）　*/
+.fixed_table {
+	table-layout: fixed;
+}
+
+/*　メッセージ出力レイヤー　-----------------------------------------------*/
+
+/*　エラーメッセージ出力レイヤー　*/
+.moveLayer {
+	position : absolute;
+	left : 3px;
+	top : 8px;
+	width : 360px;
+	height : 10px;
+	visibility : visible;
+	z-index : 1;
+	overflow:visible;
+}
+#moveLayer {
+	filter : alpha(opacity=30);
+	opacity: 0.3;
+	background-color : white;
+	width : 360px;
+	padding : 2px;
+	zoom:1;
+	overflow:visible;
+}
+/*　通常メッセージ出力レイヤー　*/
+.infomsgLayer {
+	position : absolute;
+	left : 3px;
+	top : 8px;
+	width : 300px;
+	height : 1px;
+	visibility : hidden;
+	z-index : 2;
+}
+#infomsgLayer {
+	background-color : white;
+	width : 300px;
+	padding : 5px;
+}
+
+/*　各タグ　--------------------------------------------------------------*/
+
+BODY {
+	background-color : #FFF8E9;
+	border : 0px solid #ffffff;
+	
+	scrollbar-face-color:#dce3ed;
+	scrollbar-highlight-color:#ffffff;
+	scrollbar-shadow-color:#909390;
+	scrollbar-3dlight-color:#dce3ed;
+	scrollbar-arrow-color:#398888;
+	scrollbar-track-color:#dce3ed;
+	scrollbar-darkshadow-color:#398888;
+	font-family: "ＭＳ Ｐゴシック",sans-serif;
+}
+BODY, TH, TD {
+	font-size : 13px;
+}
+
+HR {
+	height : 3px;
+	border: 0;      
+	background: #cad6d6;
+}
+H3  {
+	PADDING-LEFT: 15px; 
+	FONT-SIZE: 18px; 
+	background-color: #000066; 
+	TEXT-ALIGN: left;
+	color: #ffffff; 
+	PADDING-BOTTOM: 4px; 
+	PADDING-TOP: 4px;
+	font-weight: normal;
+}

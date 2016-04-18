@@ -1,0 +1,56 @@
+/* inputóvëf
+---------------------------------------------------- */
+input[type="text"]{ margin:0px; padding:2px 1px; height:12px; }
+
+/* size1 */
+input.s_1{ width:15px; }
+/* size4 */
+input.s_4{ width:32px; }
+/* size5 */
+input.s_5{ width:37px; }
+/* size6 */
+input.s_6{ width:42px; }
+/* size7 */
+input.s_7{ width:47px; }
+/* size8 */
+input.s_8{ width:52px; }
+/* size9 */
+input.s_9{ width:59px; }
+/* size10 */
+input.s_10{ width:62px; }
+/* size11 */
+input.s_11{ width:68px; }
+/* size12 */
+input.s_12{ width:73px; }
+/* size14 */
+input.s_14{ width:80px; }
+/* size18 */
+input.s_18{ width:99px; }
+/* size20 */
+input.s_20{ width:112px; }
+/* size21 */
+input.s_21{ width:118px; }
+/* size25 */
+input.s_25{ width:138px; }
+/* size28 */
+input.s_28{ width:153px; }
+/* size40 */
+input.s_40{ width:207px; }
+/* size41 */
+input.s_41{ width:213px; }
+/* size45 */
+input.s_45{ width:237px; }
+/* size50 */
+input.s_50{ width:263px; }
+
+
+
+/* selectóvëf
+---------------------------------------------------- */
+select { margin:1px; }
+
+
+/* ÉâÉxÉãïù
+---------------------------------------------------- */
+/* âÔé– */
+.width_kaiskbcod{ width:60px; }

@@ -1,0 +1,433 @@
+
+java.util.Date sysdate = new java.util.Date(System.currentTimeMillis());
+
+java.util.Calendar cal = (java.util.Calendar)(new java.util.GregorianCalendar());
+//cal.setTime(sysdate);
+cal.set(2003,4,6);
+
+		int prsnki = 0;
+		
+		int youbi = cal.get(cal.DAY_OF_WEEK);
+		//Œ—j“ú‚¾‚Á‚½‚ç
+		if(youbi == cal.MONDAY){
+System.out.println("Œ—j“úI");
+			cal.add(java.util.Calendar.DATE,4);//‚S“úŒã
+		//‰Î—j“ú‚¾‚Á‚½‚ç
+		}else if(youbi == cal.TUESDAY){
+System.out.println("‰Î—j“úI");
+			cal.add(java.util.Calendar.DATE,3);//‚R“úŒã
+		//…`‹à—j“ú‚¾‚Á‚½‚ç
+		}else if(youbi != cal.SUNDAY && youbi != cal.SATURDAY){
+System.out.println("…`‹à—j“úI");
+			cal.add(java.util.Calendar.DATE,5);//‚T“úŒã
+		}
+		prsnki = Integer.parseInt((new java.text.SimpleDateFormat("yyMMdd")).format(cal.getTime()),10);
+System.out.println("prsnki : "+prsnki);
+
+
+
+java.util.Calendar cal = (java.util.Calendar)(new java.util.GregorianCalendar());
+//cal.setTime(sysdate);
+cal.set(2003,4,7);
+
+		int fuknki = 0;
+		
+		int youbi = cal.get(cal.DAY_OF_WEEK);
+		//Œ—j“ú‚¾‚Á‚½‚ç
+		if(youbi == cal.MONDAY){
+System.out.println("Œ—j“úI");
+			cal.add(java.util.Calendar.DATE,7);//‚V“úŒã
+		//‰Î`‹à—j“ú‚¾‚Á‚½‚ç
+		}else if(youbi != cal.SUNDAY && youbi != cal.SATURDAY){
+System.out.println("‰Î`‹à—j“úI");
+			cal.add(java.util.Calendar.DATE,6);//‚U“úŒã
+		}
+		fuknki = Integer.parseInt((new java.text.SimpleDateFormat("yyMMdd")).format(cal.getTime()),10);
+System.out.println("fuknki : "+fuknki);
+
+
+	/** ƒvƒŒƒX”[Šú‚ÌZo */
+	public int calculatePrsNki(java.util.Calendar cal){
+		int prsnki = 0;
+		
+		int youbi = cal.get(cal.DAY_OF_WEEK);
+		//Œ—j“ú‚¾‚Á‚½‚ç
+		if(youbi == cal.MONDAY){
+			cal.add(Calendar.DATE,4);//‚S“úŒã
+		//‰Î—j“ú‚¾‚Á‚½‚ç
+		}else if(youbi == cal.TUESDAY){
+			cal.add(Calendar.DATE,3);//‚R“úŒã
+		//…`‹à—j“ú‚¾‚Á‚½‚ç
+		}else if(youbi != cal.SUNDAY && youbi != cal.SATURDAY){
+			cal.add(Calendar.DATE,5);//‚T“úŒã
+		}
+		prsnki = Integer.parseInt((new java.text.SimpleDateFormat("yyMMdd")).format(cal.getTime()),10);
+		return prsnki;
+	}
+	
+	/** •›‘Ş”[Šú‚ÌZo */
+	public int calculateFukNki(java.util.Calendar cal){
+		int fuknki = 0;
+		
+		int youbi = cal.get(cal.DAY_OF_WEEK);
+		//Œ—j“ú‚¾‚Á‚½‚ç
+		if(youbi == cal.MONDAY){
+			cal.add(Calendar.DATE,7);//‚V“úŒã
+		//‰Î`‹à—j“ú‚¾‚Á‚½‚ç
+		}else if(youbi != cal.SUNDAY && youbi != cal.SATURDAY){
+			cal.add(Calendar.DATE,6);//‚U“úŒã
+		}
+		fuknki = Integer.parseInt((new java.text.SimpleDateFormat("yyMMdd")).format(cal.getTime()),10);
+		return fuknki;
+	}
+
+
+
+
+//-----------------------------------------------------------------------------------
+
+
+
+
+
+if(cal.get(cal.DAY_OF_WEEK)==java.util.Calendar.FRIDAY)
+System.out.println("‚«‚ñ‚æ‚¤‚ÑI");
+
+System.out.println("java.util.Calendar.FRIDAY : "+java.util.Calendar.FRIDAY);
+System.out.println("cal.get(cal.DAY_OF_WEEK) : "+cal.get(cal.DAY_OF_WEEK));
+System.out.println("cal.get(cal.YEAR) : "+cal.get(cal.YEAR));
+System.out.println("cal.get(cal.MONTH) : "+cal.get(cal.MONTH));
+System.out.println("cal.get(cal.DATE) : "+cal.get(cal.DATE));
+
+
+
+
+//-----------------------------------------------------------------------------------
+
+
+
+
+java.math.BigDecimal a = new java.math.BigDecimal(10);
+java.math.BigDecimal b = new java.math.BigDecimal(3);
+java.math.BigDecimal zainisuu = a.divide(b, 2, java.math.BigDecimal.ROUND_HALF_UP);
+System.out.println("zainisuu : "+zainisuu);
+		
+java.math.BigDecimal fskzaisuu =  new java.math.BigDecimal("4880");
+java.math.BigDecimal mrmsuu    =  new java.math.BigDecimal("100");
+java.math.BigDecimal b         = new java.math.BigDecimal(new java.math.BigInteger("99"), 2);
+
+fskzaisuu.divide(mrmsuu, 2, java.math.BigDecimal.ROUND_HALF_UP);
+b.add(fskzaisuu.divide(mrmsuu, 2, java.math.BigDecimal.ROUND_HALF_UP));
+
+java.math.BigDecimal teiansuu = b.add(fskzaisuu.divide(mrmsuu, 2, java.math.BigDecimal.ROUND_HALF_UP));
+teiansuu.setScale(0,java.math.BigDecimal.ROUND_DOWN);
+//i•s‘«İŒÉ^‚Ü‚é‚ß”—Ê + 0.99 ‚ğ ¬”“_ˆÈ‰ºØ‚èÌ‚Äj~ ‚Ü‚é‚ß”—Ê ‚ğVO‚ÉƒZƒbƒg
+teiansuu.multiply(mrmsuu);(java.math.BigDecimal) 4979.00
+System.out.println("teiansuu : "+teiansuu);	
+
+
+
+//-----------------------------------------------------------------------------------
+
+
+		
+double fskzaisuu = 51;
+double mrmsuu    = 100;
+double b         = 0.99;
+
+int a = (int)(((int)(fskzaisuu / mrmsuu + b)) * mrmsuu);
+System.out.println("a : "+a);
+int i = (int)a;
+System.out.println("i : "+i);
+
+fskzaisuu.divide(mrmsuu, 2, java.math.BigDecimal.ROUND_HALF_UP);
+b.add(fskzaisuu.divide(mrmsuu, 2, java.math.BigDecimal.ROUND_HALF_UP));
+
+java.math.BigDecimal teiansuu = b.add(fskzaisuu.divide(mrmsuu, 2, java.math.BigDecimal.ROUND_HALF_UP));
+teiansuu.setScale(0,java.math.BigDecimal.ROUND_DOWN);
+//i•s‘«İŒÉ^‚Ü‚é‚ß”—Ê + 0.99 ‚ğ ¬”“_ˆÈ‰ºØ‚èÌ‚Äj~ ‚Ü‚é‚ß”—Ê ‚ğVO‚ÉƒZƒbƒg
+teiansuu.multiply(mrmsuu);(java.math.BigDecimal) 4979.00
+System.out.println("teiansuu : "+teiansuu);	
+
+
+
+//-----------------------------------------------------------------------------------
+
+
+java.util.ArrayList resultArr = new java.util.ArrayList();
+String[] s = {"Œ‹‰Ê1","Œ‹‰Ê2","Œ‹‰Ê3","Œ‹‰Ê4","Œ‹‰Ê5","Œ‹‰Ê6","Œ‹‰Ê7","Œ‹‰Ê8","Œ‹‰Ê9","Œ‹‰Ê10","Œ‹‰Ê11","Œ‹‰Ê12","Œ‹‰Ê13","Œ‹‰Ê14","Œ‹‰Ê15","Œ‹‰Ê16"};
+for(int i=0;i<s.length;i++){
+	resultArr.add(s[i]);	
+}
+resultArr.size();
+
+int max = 5;
+int pageCount = 0;
+
+if(resultArr.size() > max)
+	pageCount = resultArr.size()/max;
+	
+if(resultArr.size()%max != 0)
+	pageCount++;
+
+
+java.util.ArrayList pageArr = new java.util.ArrayList();
+
+for(int i = 0; i<pageCount; i++){
+	pageArr.add(new java.util.ArrayList());
+}
+
+int count = 0;
+
+for(int i = 0; i < pageArr.size(); i++){
+System.out.println("i : "+i);
+	java.util.ArrayList page = (java.util.ArrayList)pageArr.get(i);
+	for(int j = count; j < max+count && j < resultArr.size(); j++){
+System.out.println("j : "+j);
+		if(i == 0){
+System.out.println("1ƒy[ƒW–Ú‚Ìˆ—");
+		}
+		page.add(resultArr.get(j)+"");
+	}
+	count += max;
+System.out.println("count : "+count);
+}
+
+for(int i = 0; i < pageArr.size(); i++){
+System.out.println("i : "+i);
+	java.util.ArrayList page = (java.util.ArrayList)pageArr.get(i);
+	for(int j = 0; j < page.size(); j++){
+System.out.println("page.get("+j+") : "+page.get(j)+"");
+	}
+	
+}
+
+//-----------------------------------------------------------------------------------
+
+int max = 5;
+int page = 2;
+String[] s = {"Œ‹‰Ê1","Œ‹‰Ê2","Œ‹‰Ê3","Œ‹‰Ê4","Œ‹‰Ê5","Œ‹‰Ê6","Œ‹‰Ê7","Œ‹‰Ê8","Œ‹‰Ê9","Œ‹‰Ê10","Œ‹‰Ê11","Œ‹‰Ê12","Œ‹‰Ê13","Œ‹‰Ê14","Œ‹‰Ê15","Œ‹‰Ê16"};
+java.util.ArrayList resultArr = new java.util.ArrayList();
+for(int i=0;i<s.length;i++){
+	resultArr.add(s[i]);	
+}
+
+String[] _s = {"™","™","™","™","™"};
+java.util.ArrayList pageArr = new java.util.ArrayList();
+for(int i=0;i<_s.length;i++){
+	pageArr.add(_s[i]);	
+}
+boolean flg = false;
+for(int i = 0; i<resultArr.size(); i++){
+System.out.println("i : "+i);
+	if(!flg){
+		for(int j = 0; i >= max*page && j < max && i<resultArr.size(); j++, i++){
+System.out.println("j : "+j);
+			resultArr.set(i, pageArr.get(j));
+			flg = true;
+		}
+	}
+}
+
+for(int i=0;i<resultArr.size();i++){
+System.out.println("resultArr.get("+i+") : "+resultArr.get(i));	
+}
+
+//-----------------------------------------------------------------------------------
+
+java.util.ArrayList resultArr = new java.util.ArrayList();
+String[] s = {"Œ‹‰Ê1","Œ‹‰Ê2","Œ‹‰Ê3","Œ‹‰Ê4","Œ‹‰Ê5","Œ‹‰Ê6","Œ‹‰Ê7","Œ‹‰Ê8","Œ‹‰Ê9","Œ‹‰Ê10","Œ‹‰Ê11","Œ‹‰Ê12","Œ‹‰Ê13","Œ‹‰Ê14","Œ‹‰Ê15","Œ‹‰Ê16"};
+for(int i=0;i<s.length;i++){
+	resultArr.add(s[i]);	
+}
+resultArr.size();
+
+int max = 5;
+int pageCount = 0;
+int allCount = s.length;
+
+if(resultArr.size() > max)
+	pageCount = resultArr.size()/max;
+	
+if(resultArr.size()%max != 0)
+	pageCount++;
+
+
+java.util.ArrayList pageArr = new java.util.ArrayList();
+
+for(int i = 0; i<pageCount; i++){
+	pageArr.add(new java.util.ArrayList());
+}
+
+int count = 0;
+
+for(int i = 0; i < pageArr.size(); i++){
+System.out.println("i : "+i);
+	java.util.ArrayList page = (java.util.ArrayList)pageArr.get(i);
+	for(int j = count; j < max+count && j < resultArr.size(); j++){
+System.out.println("j : "+j);
+		if(i == 0){
+System.out.println("1ƒy[ƒW–Ú‚Ìˆ—");
+		}
+		page.add(resultArr.get(j)+"");
+	}
+	count += max;
+System.out.println("count : "+count);
+}
+
+for(int i = 0; i < pageArr.size(); i++){
+System.out.println("i : "+i);
+	java.util.ArrayList page = (java.util.ArrayList)pageArr.get(i);
+	for(int j = 0; j < page.size(); j++){
+System.out.println("page.get("+j+") : "+page.get(j)+"");
+	}
+	
+}
+
+int idx = 13;
+
+int pageIdx = idx / max;
+int rowIdx = idx % max;
+System.out.println(pageIdx+" : "+rowIdx);
+
+java.util.ArrayList _page = (java.util.ArrayList)pageArr.get(pageIdx);
+System.out.println("_page.get(rowIdx); : "+_page.get(rowIdx));
+_page.set(rowIdx,"™");
+
+for(int i = 0; i < pageArr.size(); i++){
+System.out.println("i : "+i);
+	java.util.ArrayList page = (java.util.ArrayList)pageArr.get(i);
+	for(int j = 0; j < page.size(); j++){
+System.out.println("page.get("+j+") : "+page.get(j)+"");
+	}
+	
+}
+
+//----------------------------------------------------------
+
+java.util.ArrayList resultArr = new java.util.ArrayList();
+String[] s = {"Œ‹‰Ê1","Œ‹‰Ê2","Œ‹‰Ê3","Œ‹‰Ê4","Œ‹‰Ê5","Œ‹‰Ê6","Œ‹‰Ê7","Œ‹‰Ê8","Œ‹‰Ê9","Œ‹‰Ê10","Œ‹‰Ê11","Œ‹‰Ê12","Œ‹‰Ê13","Œ‹‰Ê14","Œ‹‰Ê15","Œ‹‰Ê16"};
+
+java.util.TreeMap keyMap = new java.util.TreeMap();
+//TreeMap‚ÉƒL[‚Æs[i]‚ğŠi”[‚µ‚Ä‚¢‚­
+for(int i = 0;i<s.length; i++){
+	keyMap.put(s[i],s[i]);
+System.out.println("s["+i+"] : "+s[i]);	
+}
+
+//key‚Ì¸‡‚Éƒ\[ƒg‚µ‚Äæ‚èo‚µAArrayList‚ÉŠi”[‚·‚é
+java.util.Collection colc = keyMap.values();
+java.util.Iterator itr = colc.iterator();
+int idx = 0;
+while(itr.hasNext()){
+System.out.println("itr.next() "+idx+" : "+itr.next());
+idx++;
+}
+
+
+//-------------------------------------------------------------
+
+java.util.Date sysdate = new java.util.Date(System.currentTimeMillis());
+
+java.util.Calendar cal1 = (java.util.Calendar)(new java.util.GregorianCalendar());
+java.util.Calendar cal2 = (java.util.Calendar)(new java.util.GregorianCalendar());
+//cal.setTime(sysdate);
+cal1.set(2003,7,16,9,0);
+cal2.set(2003,7,16,17,30);
+System.out.println(" : "+cal1.get(java.util.Calendar.SECOND));
+System.out.println(" : "+cal2.get(java.util.Calendar.SECOND));
+
+		int prsnki = 0;
+		
+		int youbi = cal.get(cal.DAY_OF_WEEK);
+		//Œ—j“ú‚¾‚Á‚½‚ç
+		if(youbi == cal.MONDAY){
+System.out.println("Œ—j“úI");
+			cal.add(java.util.Calendar.DATE,4);//‚S“úŒã
+		//‰Î—j“ú‚¾‚Á‚½‚ç
+		}else if(youbi == cal.TUESDAY){
+System.out.println("‰Î—j“úI");
+			cal.add(java.util.Calendar.DATE,3);//‚R“úŒã
+		//…`‹à—j“ú‚¾‚Á‚½‚ç
+		}else if(youbi != cal.SUNDAY && youbi != cal.SATURDAY){
+System.out.println("…`‹à—j“úI");
+			cal.add(java.util.Calendar.DATE,5);//‚T“úŒã
+		}
+		prsnki = Integer.parseInt((new java.text.SimpleDateFormat("yyMMdd")).format(cal.getTime()),10);
+System.out.println("prsnki : "+prsnki);
+
+
+
+java.util.ArrayList arr = new java.util.ArrayList();
+
+arr.add(new String["020","100"]);
+arr.add(new String["020",""]);
+arr.add(new String["020",""]);
+arr.add(new String["020","200"]);
+arr.add(new String["020",""]);
+arr.add(new String["060","300"]);
+arr.add(new String["060",""]);
+arr.add(new String["060",""]);
+arr.add(new String["060",""]);
+
+
+java.util.ArrayList arr = new java.util.ArrayList();
+
+arr.add("1,2,3,4,5");
+arr.add("ACPL000000001,ACPL000000002,ACPL000000003,ACPL000000004,ACPL000000005");
+arr.add("001,002,003,004,005");
+arr.add("100,200,300,400,500");
+
+int kenSuu = 5;
+int columnSuu = 4;
+String[][] str = new String[kenSuu][columnSuu];
+
+for(int i = 0; i < arr.size(); i++){
+	java.util.StringTokenizer st = 
+		new java.util.StringTokenizer(arr.get(i).toString(),",");
+System.out.println("arr.get("+i+").toString() : "+arr.get(i).toString());
+	int columnCount = 0;
+	while(st.hasMoreTokens()){
+		String prm = st.nextToken();
+		switch(i){
+			case 0:
+				str[columnCount][i] = prm;
+				break;
+			case 1:
+				str[columnCount][i] = prm;
+				break;
+			case 2:
+			case 3:
+				str[columnCount][i] = prm;
+		}
+		columnCount++;
+	}
+	
+}
+
+for(int i = 0; i < str.length; i++){
+	
+	for(int j = 0; j < str[i].length; j++){
+		
+System.out.println("str["+i+"]["+j+"] : "+str[i][j]);		
+		
+	}
+System.out.println(" ");		
+}
+
+
+java.util.ArrayList arr = new java.util.ArrayList();
+arr.add(1+"");
+arr.add(2+"");
+arr.add(3+"");
+arr.add(4+"");
+
+for(int i = 0; i < arr.size(); i++){
+	
+int j = Integer.parseInt(arr.get(i)+"");
+		
+System.out.println("arr["+i+"] : "+j);		
+
+	
+}
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="pro_ordEAR">
+        <module-type module-type-id="jst.ear">
+            <version>1.3</version>
+        </module-type>
+        <wb-resource deploy-path="/" source-path="/"/>
+        <dependent-module archiveName="pro_ord.war" deploy-path="/" handle="module:/resource/pro_ord/pro_ord">
+            <dependent-object>WebModule_1265783288953</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

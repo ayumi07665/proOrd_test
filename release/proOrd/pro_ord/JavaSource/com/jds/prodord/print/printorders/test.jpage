@@ -1,0 +1,111 @@
+
+		java.util.ArrayList arr = new java.util.ArrayList();
+		java.util.TreeMap keyMap = new java.util.TreeMap();
+		String[] str = {"VAPVAPHACSYO1H0010002","VAPVAPHACSYO1H0020001","VAPTF HACSYO1H0020001","VAPVAPHACSYO2H0010000","VAPTF HACSYO2H0010000",
+						"VAPVAPHACSYO2H0010003","VAPTF HACSYO1H0010002","VAPTF HACSYO2H0010005","VAPTF HACSYO1H0010003","VAPTF HACSYO2H0020004"}; 
+		for(int i = 0;i<str.length; i++){
+			keyMap.put(str[i],str[i]);	
+		}
+		for(int i = 0;i<str.length; i++){
+System.out.println("key : "+str[i]);	
+		}
+System.out.println("@@");
+		java.util.Collection colc = keyMap.values();
+		java.util.Iterator itr = colc.iterator();
+		String before_key = "";
+		while(itr.hasNext()){
+			String s = (String)itr.next();
+			arr.add(s);
+System.out.println("key : "+s);
+		}
+		
+		
+		int count = 0;
+		boolean flg = true;
+		java.util.ArrayList layout = new java.util.ArrayList();
+		String break_key = "";
+		for(int i=0; i<	arr.size();i++){
+			if(flg){
+				String str1 = arr.get(i)+"";
+				break_key = str1.substring(13,17);
+System.out.println("break_key : "+break_key+" : "+i);
+			}
+			String str2 = arr.get(i)+"";
+			String hacCod = str2.substring(13,17);
+			
+			if(break_key.equals(hacCod)){
+System.out.println("1*"+i+"*");
+				flg = false;
+				count++;
+			}else{
+System.out.println("2*"+i+"*");
+				layout.add(count+"");
+				count = 0;
+				i--;
+				flg = true;
+			}
+			if(i == arr.size()-1){
+				layout.add(count+"");
+			}
+		}	
+System.out.println("layout.size() : "+layout.size());
+
+		for(int i=0; i<	layout.size();i++){
+System.out.println("layout.get("+i+") : "+layout.get(i));
+
+		}
+		
+//		
+//		return layout;
+
+//---------------------------------------------------------------------------------------
+
+		java.util.ArrayList arr = new java.util.ArrayList();
+		arr.add("001");//0
+		arr.add("001");//1
+		arr.add("002");//2
+		arr.add("002");//3
+		arr.add("002");//4
+		
+		arr.add("002");//5
+		arr.add("002");//6
+		arr.add("001");//7
+		arr.add("002");//8
+		arr.add("002");//9
+		
+		
+		int count = 0;
+		boolean flg = true;
+		java.util.ArrayList layout = new java.util.ArrayList();
+		String st = "";
+		for(int i=0; i < arr.size();i++){
+			if(flg){
+				st = arr.get(i)+"";
+System.out.println("st : "+st+" : "+i);
+			}
+			if(st.equals(arr.get(i)+"")){
+System.out.println("1*"+i+"*");
+				flg = false;
+				count++;
+			}else{
+System.out.println("2*"+i+"*");
+				layout.add(count+"");
+				count = 0;
+				i--;
+				flg = true;
+			}
+			if(i == arr.size()-1){
+				layout.add(count+"");
+			}
+		}
+
+
+System.out.println("layout.size() : "+layout.size());
+
+		for(int i=0; i<	layout.size();i++){
+System.out.println("layout.get("+i+") : "+layout.get(i));
+
+		}
+
+
+
