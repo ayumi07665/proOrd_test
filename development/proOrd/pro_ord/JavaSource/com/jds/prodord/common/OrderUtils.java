@@ -624,7 +624,8 @@ public class OrderUtils {
 					+	"HAC02.RRKTBL, "	//2005/08/26 add
 					+	"HAC02.TAN, "			//2005/08/26 add
 					+	"HAC02.BIKOU2, "			//2007/12/25 add
-					+	"HAC02.TAN2"			//2008/03/07 add
+					+	"HAC02.TAN2,"			//2008/03/07 add
+					+	"'0' "							//2017/07/24 add(EDIZFLGはデフォルト値"0"で登録)
 					+ " FROM FTBHAC02 HAC02"
 					
 					+ " LEFT OUTER JOIN FTBMST03 MST03 ON"
