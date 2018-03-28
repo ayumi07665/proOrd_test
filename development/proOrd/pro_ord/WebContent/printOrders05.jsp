@@ -1,4 +1,4 @@
-<!-- ƒ‰ƒ“ƒeƒBƒX -->
+<!-- ƒoƒ“ƒ_ƒCƒiƒ€ƒRƒA[ƒc -->
 <!DOCTYPE HTML>
 <%@ page contentType="text/html; charset=Shift_JIS" %>
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
@@ -103,14 +103,11 @@
    <table style="width:278px;margin-top:2px;" cellspacing="0" cellpadding="2">
      <tr>
      	<td colspan="3" class="layout_table">
-    		<table style="width:278px"><tr>
-		      <td class="header1 layout_table" valign="middle" style="width:126px">
+    		<table style="width:278px;height:32px"><tr>
+		      <td class="header1 layout_table" valign="middle" style="width:278px">
 		      	<div style="font-size : 19px; font-family: '‚l‚r ƒSƒVƒbƒN',sans-serif; font-weight:bold;">
 		      	  <bean:write name="printOrdersPage" property="kaiNmKj"/>
 		      	</div>
-		      </td>
-		      <td class="layout_table">
-		        <html:img page="<%=printOrdersPage.getKaiLogoSrc()%>" style="width:135px;height:28px;" align="right" alt="" border="0"/>
 		      </td>
     		</tr></table>
     	</td>
@@ -121,7 +118,7 @@
           <bean:message key="label.ybnmark"/><bean:write name="printOrdersPage" property="kaiYbnNo"/>
         </div>
       </td>
-      <td class="layout_table" colspan="2" style="width:195px;text-align:left;">
+      <td class="layout_table" colspan="2" style="width:200px;text-align:left;">
         <div style="font-size : 12px; font-family : '‚l‚r –¾’©' , serif;">
           <bean:write name="printOrdersPage" property="kaiAdr1Kj"/><br>
           <bean:write name="printOrdersPage" property="kaiAdr2Kj"/>
@@ -130,9 +127,7 @@
     </tr>
     <tr>
       <td class="layout_table" colspan="3" align="left">
-        <div style="font-size : 12px; font-family : '‚l‚r –¾’©' , serif;">
-		‚s‚d‚k:<bean:write name="printOrdersPage" property="kaiTelNo"/>
-		 ‚e‚`‚w:<bean:write name="printOrdersPage" property="kaiFaxBng"/>
+        <div style="font-size : 12px; font-family : '‚l‚r –¾’©' , serif; height : 12px">
         </div>
       </td>
     </tr>

@@ -56,7 +56,6 @@ public interface CommonConst {
 	String KAICOD_VAP = "VAP";
 	String KAICOD_CR = "CR";
 	String KAICOD_FX = "FX";
-	String KAICOD_LAN = "LAN";
 	String KAICOD_BAN = "BAN";
 
 	//----‹æ•ª---------------------------------------------------------------

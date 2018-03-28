@@ -171,7 +171,7 @@
 	<forward name="CR" path="/printOrders02.jsp"/>
 	<forward name="K" path="/printOrders03.jsp"/>
 	<forward name="FX" path="/printOrders04.jsp"/>
-	<forward name="LAN" path="/printOrders05.jsp"/>
+	<forward name="BAN" path="/printOrders05.jsp"/>
 	<forward name="failure" path="/error.jsp?reason=system2"/>
 	</action>
 	<!--  *****  ”­’—š—ðÆ‰ïTop  ***** -->
