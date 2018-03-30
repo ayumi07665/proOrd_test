@@ -494,13 +494,13 @@ public class OrderUtils {
 			}
 		}
 		//***********************************************************************/
-		// CR, FX, LANの場合 
+		// CR, FX, BANの場合 
 		// 副資材発注先 : 品番マスターのFUKSZIMKR(発注先マスターに存在する場合)
 		// 副資材コード : 副資材マスターから取得(BUNCOD=1)
 		//***********************************************************************/
 		else if (fmVO.getKaiSkbCod().equals(CommonConst.KAICOD_CR)
 				|| fmVO.getDaiKaiSkbCod().equals(CommonConst.KAICOD_FX)
-				|| fmVO.getKaiSkbCod().equals(CommonConst.KAICOD_LAN)) {
+				|| fmVO.getDaiKaiSkbCod().equals(CommonConst.KAICOD_BAN)) {
 			
 			//---発注先マスターになかったとき---------------------------------------------------
 			//付属品構成マスター検索・副資材コードのセットを取得

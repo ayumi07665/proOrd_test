@@ -129,9 +129,8 @@ public class IkkatsuReferDAO extends CommonDAO{
 						"FTBHIN01 HIN01 ";
 
 			 sql += "INNER JOIN FTBMST06 MST06 ON ";
-						//CR・LANの場合 MST06のDAIKAISKBCODは会社識別コードが入っているため
-						if(queryVO.getKaiSkbCod().equals(CommonConst.KAICOD_CR)||
-								queryVO.getKaiSkbCod().equals(CommonConst.KAICOD_LAN)){
+						//CRの場合 MST06のDAIKAISKBCODは会社識別コードが入っているため
+						if(queryVO.getKaiSkbCod().equals(CommonConst.KAICOD_CR)){
 							sql+= "HIN01.KAISKBCOD = MST06.DAIKAISKBCOD AND ";
 						}else{
 							sql+= "HIN01.DAIKAISKBCOD = MST06.DAIKAISKBCOD AND ";
